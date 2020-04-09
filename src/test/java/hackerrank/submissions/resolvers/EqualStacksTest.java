@@ -19,8 +19,8 @@ public class EqualStacksTest {
 
     @ParameterizedTest
     @MethodSource("provideStacksForValidateMaxHeight")
-    void shouldReturnMaxHeightForAllStacks(int[][] stacks, String expectedMaxHeight) {
-        final String actualMaxHeight = equalStacks.solve(stacks);
+    void shouldReturnMaxHeightForAllStacks(int[][] stacks, int expectedMaxHeight) {
+        final int actualMaxHeight = equalStacks.solve(stacks);
         Assertions.assertEquals(expectedMaxHeight, actualMaxHeight);
     }
 
@@ -30,7 +30,7 @@ public class EqualStacksTest {
                         new int[]{3, 2, 1, 1, 1},
                         new int[]{4, 3, 2},
                         new int[]{1, 1, 4, 1}
-                }, "5")
+                }, 5)
         );
     }
 }

@@ -6,14 +6,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class EqualStacks implements ProblemResolver<int[][]> {
+public class EqualStacks implements ProblemResolver<int[][], Integer> {
 
     public static final int INDEX_ZERO = 0;
     public static final int INDEX_ONE = 1;
     public static final int INDEX_TWO = 2;
 
     @Override
-    public String solve(int[]... stacks) {
+    public Integer solve(int[]... stacks) {
         final List<Integer> stack1 = Arrays.stream(stacks[INDEX_ZERO]).boxed().collect(Collectors.toList());
         final List<Integer> stack2 = Arrays.stream(stacks[INDEX_ONE]).boxed().collect(Collectors.toList());
         final List<Integer> stack3 = Arrays.stream(stacks[INDEX_TWO]).boxed().collect(Collectors.toList());
@@ -39,6 +39,6 @@ public class EqualStacks implements ProblemResolver<int[][]> {
                 stack3.remove(INDEX_ZERO);
             }
         }
-        return String.valueOf(stackHeight1);
+        return stackHeight1;
     }
 }

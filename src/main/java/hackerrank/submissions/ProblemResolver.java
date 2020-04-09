@@ -1,6 +1,6 @@
 package hackerrank.submissions;
 
-public interface ProblemResolver<IN> {
+public interface ProblemResolver<IN, OUT> {
 
-    String solve(IN input);
+    OUT solve(IN input);
 }

@@ -2,7 +2,7 @@ package hackerrank.submissions.resolvers;
 
 import hackerrank.submissions.ProblemResolver;
 
-public class Staircase implements ProblemResolver<Integer> {
+public class Staircase implements ProblemResolver<Integer, String> {
 
     public static final String STAIR_BLOCK = "#";
     public static final String SPACE = " ";

@@ -18,9 +18,9 @@ public class JimAndTheOrdersTest {
 
     @ParameterizedTest
     @MethodSource("provideOrders")
-    public void shouldPrintTheOrdersByServeTimeFromMinorToMajor(int[][] orders, String expectedOrdersAscending) {
-        final String actualOrdersAscending = jimAndTheOrders.solve(orders);
-        Assertions.assertEquals(expectedOrdersAscending, actualOrdersAscending);
+    public void shouldPrintTheOrdersByServeTimeFromMinorToMajor(int[][] orders, int[] expectedOrdersAscending) {
+        final int[] actualOrdersAscending = jimAndTheOrders.solve(orders);
+        Assertions.assertArrayEquals(expectedOrdersAscending, actualOrdersAscending);
     }
 
     private static Stream<Arguments> provideOrders() {
@@ -31,12 +31,12 @@ public class JimAndTheOrdersTest {
                         new int[]{5, 6},
                         new int[]{3, 1},
                         new int[]{4, 3}
-                }, "[4, 2, 5, 1, 3]"),
+                }, new int[]{4, 2, 5, 1, 3}),
                 Arguments.of(new int[][]{
                         new int[]{1, 3},
                         new int[]{2, 3},
                         new int[]{3, 3}
-                }, "[1, 2, 3]")
+                }, new int[]{1, 2, 3})
         );
     }
 }
